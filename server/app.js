@@ -12,14 +12,7 @@ const port = process.env.PORT || 3177;
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(
-	cors({
-		origin: [
-			`${process.env.HOSTED_CLIENT_URL}`,
-		],
-		credentials: true,
-	})
-);
+app.use(cors());
 
 
 mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
