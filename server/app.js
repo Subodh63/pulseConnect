@@ -16,6 +16,7 @@ app.use(
 	cors({
 		origin: [
 			`http://localhost:${process.env.CLIENT_PORT}`,
+			`${process.env.HOSTED_CLIENT_URL}`,
 		],
 		credentials: true,
 	})
