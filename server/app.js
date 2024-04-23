@@ -12,7 +12,27 @@ const port = process.env.PORT || 3177;
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors());
+// Define allowed origins
+const allowedOrigins = [
+	process.env.HOSTED_CLIENT_URL
+];
+
+// Custom middleware to set 'Access-Control-Allow-Origin' header
+const allowCors = (req, res, next) => {
+	const origin = req.headers.origin;
+	if (allowedOrigins.includes(origin)) {
+		res.setHeader('Access-Control-Allow-Origin', origin);
+	}
+	// Allow credentials
+	res.setHeader('Access-Control-Allow-Credentials', true);
+	next();
+};
+
+// Apply CORS middleware with custom options
+app.use(cors({
+	origin: allowedOrigins,
+	credentials: true
+}));
 
 
 mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
