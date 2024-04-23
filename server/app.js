@@ -14,6 +14,8 @@ app.use(cookieParser());
 app.use(express.json());
 // Configure CORS to allow requests from any origin
 app.use(cors());
+// Handling OPTIONS requests explicitly for preflight requests
+app.options('*', cors());
 
 
 mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
