@@ -31,7 +31,8 @@ const allowCors = (req, res, next) => {
 // Apply CORS middleware with custom options
 app.use(cors({
 	origin: allowedOrigins,
-	credentials: true
+	credentials: true,
+	optionSuccessStatus: 200
 }));
 
 
