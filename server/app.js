@@ -12,11 +12,15 @@ const port = process.env.PORT || 3177;
 
 app.use(cookieParser());
 app.use(express.json());
-// Configure CORS to allow requests from any origin
-app.use(cors());
-// Handling OPTIONS requests explicitly for preflight requests
-app.options('*', cors());
-
+// Custom middleware to set Access-Control-Allow-Origin header
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', [
+		`http://localhost:${process.env.CLIENT_PORT}`,
+		process.env.HOSTED_CLIENT_URL
+	]);
+	res.setHeader('Access-Control-Allow-Credentials', 'true');
+	next();
+});
 
 mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
 	console.log(e ? e : "Connected successfully to database");
