@@ -12,15 +12,8 @@ const port = process.env.PORT || 3177;
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(
-	cors({
-		origin: [
-			`http://localhost:${process.env.CLIENT_PORT}`,
-			`${process.env.HOSTED_CLIENT_URL}`,
-		],
-		credentials: true,
-	})
-);
+// Configure CORS to allow requests from any origin
+app.use(cors());
 
 
 mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
