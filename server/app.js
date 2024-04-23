@@ -16,7 +16,7 @@ app.use(express.json());
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', [
 		`http://localhost:${process.env.CLIENT_PORT}`,
-		process.env.HOSTED_CLIENT_URL
+		`https://pulseconnect-soumiksaha.vercel.app`,
 	]);
 	res.setHeader('Access-Control-Allow-Credentials', 'true');
 	next();
