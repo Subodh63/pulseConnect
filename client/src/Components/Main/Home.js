@@ -56,9 +56,6 @@ const Home = () => {
                     <p className="text-center font-bold text-4xl text-gray-dark dark:text-white-900">
                         "To give blood, you need neither extra strength nor extra food, and you will save a life."
                     </p>
-                    <p className="text-center text-lg text-gray-dark dark:text-gray-light">
-                        - Karl Landsteiner
-                    </p>
                 </div>
             </div>
             <h1 className="font-bold text-center text-blood my-4 text-lg underline">
@@ -134,7 +131,7 @@ const Home = () => {
             <div className="w-full bg-blood text-white-900 h-max text-sm text-center font-bold">
                 <code>
                     🩸 PulseConnect @ {new Date().getFullYear()} 🩸 || Made with ❤️ by
-                    Soumik Saha
+                    Rishikesh Darekar, Akshay Gadade, Abhay Deokar
                 </code>
             </div>
         </div>

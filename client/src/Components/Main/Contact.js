@@ -5,26 +5,26 @@ const Contact = () => {
     const data = [
         {
             title: "PulseConnect Support", body: [
-                "123, Park Street",
-                "Kolkata, West Bengal, India, 700016",
-                "+91 1234567890",
-                "support@pulseconnect.com"
+                "123, Talegaon",
+                "Pune, Maharashtra, India, 410507",
+                "+91 8275959825",
+                "support@gmail.com"
             ]
         },
         {
             title: "Administrative Inquiries", body: [
-                "456, Rabindra Sarani",
-                "Kolkata, West Bengal, India, 700073",
-                "+91 1234567891",
-                "admin@pulseconnect.com"
+                "123, Talegaon",
+                "Pune, Maharashtra, India, 410507",
+                "+91 8275959825",
+                "support@gmail.com"
             ]
         },
         {
             title: "Other Administrative Queries", body: [
                 "789, Park Circus",
-                "Kolkata, West Bengal, India, 700017",
+                "Pune, Maharashtra, India, 410507",
                 "+91 1234567892",
-                "otheradmin@pulseconnect.com"
+                "admin@pulseconnect.com"
             ]
         }
     ];

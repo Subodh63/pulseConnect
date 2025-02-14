@@ -17,8 +17,6 @@ const About = () => {
       <p className='text-lg'>The platform comprises both a user-facing interface and a comprehensive interface tailored for blood banks to streamline data management processes.</p>
       <p className='text-right text-5xl'>
         <br />
-        <a target="_blank" href="https://www.linkedin.com/in/soumikisonline/" className='hover:drop-shadow-md hover:text-metal'><i class="fa-brands fa-linkedin"></i> </a>&nbsp;&nbsp;
-        <a target="_blank" href="https://github.com/soumik-saha/" className='hover:drop-shadow-md hover:text-purple'><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;&nbsp;
       </p>
     </div>
   )
