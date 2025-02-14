@@ -5,12 +5,17 @@ const AuthContext = createContext();
 
 function AuthContextProvider(props) {
   const [loggedIn, setLoggedIn] = useState(undefined);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null); // Changed to null for clarity
 
   async function getLoggedIn() {
-    const loggedInRes = await axios.get(`${process.env.REACT_APP_API_URL}auth/loggedIn`, { withCredentials: true });
-    setLoggedIn(loggedInRes.data.auth);
-    setUser(loggedInRes.data.user);
+    try {
+      const loggedInRes = await axios.get(`${process.env.REACT_APP_API_URL}/auth/loggedIn`, { withCredentials: true });
+      setLoggedIn(loggedInRes.data.auth);
+      setUser(loggedInRes.data.user);
+    } catch (error) {
+      console.error("Error fetching logged in status:", error.response ? error.response.data : error.message);
+      setLoggedIn(false); // Set loggedIn to false if there is an error
+    }
   }
 
   useEffect(() => {
